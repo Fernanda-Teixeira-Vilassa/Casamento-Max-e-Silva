@@ -3,52 +3,58 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #ffffff;
     color: #2e4f3e;
-  }
-  
-  header {
+    position: relative;
+    padding-top: 160px;
+    padding-bottom: 160px;
+    z-index: 1;
+
+
+}
+
+header {
     background-color: #e9f5ee;
     text-align: center;
     padding: 2rem 1rem;
     border-bottom: 4px solid #c1e1c1;
-  }
-  
-  header h1 {
+}
+
+header h1 {
     font-size: 2.5rem;
     margin: 0;
-  }
-  
-  header p {
+}
+
+header p {
     font-size: 1.2rem;
     margin-top: 0.5rem;
     color: #3e614c;
-  }
-  
-  .content {
+}
+
+.content {
     text-align: center;
     padding: 2rem 1rem;
-  }
-  
-  .content h2 {
+}
+
+.content h2 {
     font-size: 2rem;
     color: #3e614c;
-  }
-  
-  .details {
+}
+
+.details {
     margin-top: 1rem;
     font-size: 1.2rem;
     line-height: 1.6;
-  }
-  
-  .timeline {
+}
+
+.timeline {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
     padding: 2rem 1rem;
     background-color: #f4fdf6;
-  }
-  
-  .photo-box {
+}
+
+.photo-box {
     width: 200px;
     height: 200px;
     background-color: #ffffff;
@@ -59,19 +65,105 @@ body {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-  }
-  
-  .photo-box img {
+}
+
+.photo-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  .footer {
+}
+
+.footer {
     text-align: center;
     padding: 1rem;
     font-size: 1rem;
     color: #4d6e5b;
     background-color: #e9f5ee;
+}
+
+.decor {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.decor-top {
+    top: 0;
+    background-image: url('imagens/flor-topo.png');  
+}
+
+.decor-bottom {
+    bottom: 0;
+    background-image: url('imagens/flor-rodape.png');
+}
+
+.localizacao {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 800px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
   
+  .localizacao h2 {
+    font-size: 1.8rem;
+    color: #2e7d32;
+    margin-bottom: 1rem;
+  }
+  
+  .localizacao p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+  
+  .mapa-container iframe {
+    border-radius: 8px;
+    width: 100%;
+    height: 300px;
+  }
+  .presentes {
+    background-color: #ffffff;
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 800px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    color: #2e7d32;
+  }
+  
+  .presentes h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #1b5e20;
+  }
+  
+  .presentes p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  .pix-box {
+    margin: 1.5rem auto;
+    padding: 1rem;
+    border: 2px dashed #a5d6a7;
+    border-radius: 10px;
+    background-color: #f1f8f4;
+    max-width: 400px;
+  }
+  
+  .agradecimento {
+    font-style: italic;
+    margin-top: 1.5rem;
+    color: #388e3c;
+  }
+    

@@ -1,15 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Convite de Casamento - Max & Silva</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <h1>Max & Silva</h1>
-    <p>Junte-se a nós para celebrar o amor</p>
-  </header>
 
-  <
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convite de Casamento - Max & Silva</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Max & Silva</h1>
+        <p>Junte-se a nós para celebrar o amor</p>
+    </header>
+
+    <div class="content">
+        <h2>Convite de Casamento</h2>
+        <div class="details">
+            <p><strong>Data:</strong> 22 de Novembro de 2025</p>
+            <p><strong>Horário:</strong> 18h</p>
+            <section class="localizacao">
+                <h2>Local da Cerimônia</h2>
+                <p><strong>📍 Comunidade Sagrada Família</strong><br>
+                   R. Dr. Cecíliano Abel de Almeida, 22 – Nova Itaparica, Vila Velha – ES, 29104-352
+                </p>
+              
+                <div class="mapa-container">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.082785385594!2d-40.31320422418195!3d-20.002507046329636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb817e2a9b9f79b%3A0xf25a21623dd58247!2sR.%20Dr.%20Cec%C3%ADliano%20Abel%20de%20Almeida%2C%2022%20-%20Nova%20Itaparica%2C%20Vila%20Velha%20-%20ES%2C%2029104-352!5e0!3m2!1spt-BR!2sbr!4v1713544722585!5m2!1spt-BR!2sbr" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>
+              </section>
+              
+        </div>
+    </div>
+   
+    <!-- Decoração floral -->
+    <div class="decor decor-top"></div>
+    <div class="decor decor-bottom"></div>
+
+    <section class="timeline">
+        <div class="photo-box" onclick="uploadPhoto(this)"><span>Foto 1</span></div>
+        <div class="photo-box" onclick="uploadPhoto(this)"><span>Foto 2</span></div>
+        <div class="photo-box" onclick="uploadPhoto(this)"><span>Foto 3</span></div>
+        <div class="photo-box" onclick="uploadPhoto(this)"><span>Foto 4</span></div>
+        <div class="photo-box" onclick="uploadPhoto(this)"><span>Foto 5</span></div>
+        <div class="photo-box" onclick="uploadPhoto(this)"><span>Foto 6</span></div>
+        <div class="photo-box" onclick="uploadPhoto(this)"><span>Foto 7</span></div>
+        <div class="photo-box" onclick="uploadPhoto(this)"><span>Foto 8</span></div>
+    </section>
+    <section class="presentes">
+        <h2>Presente dos Noivos</h2>
+        <p>
+          O maior presente que poderíamos receber é a sua presença neste dia tão especial. 💚<br><br>
+          Como muitos já sabem, <strong>moramos em Bonito/MS</strong> e, por isso, optamos por uma forma mais prática e leve de receber seu carinho: <br><br>
+          Se quiser nos presentear, <strong>aceitamos com muito amor contribuições via PIX</strong>. Qualquer valor será recebido com gratidão e usado com muito carinho na construção desta nova etapa da nossa vida juntos.
+        </p>
+        <div class="pix-box">
+          <p><strong>Chave PIX:</strong><br> silvanetevilassa@gmail.com</p>
+        </div>
+      </section>
+      
+    <div class="footer">
+        Com amor, Max & Silva 💚
+    </div>
+
+    <input type="file" accept="image/*" id="photoUploader" style="display:none" />
+
+    <script src="script.js"></script>
+</body>
+
+</html>
