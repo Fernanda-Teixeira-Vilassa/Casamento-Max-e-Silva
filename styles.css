@@ -220,4 +220,16 @@ header p {
   #rsvp-form button:hover {
     background-color: #388e3c;
   }
-  
+  .convidado-item + .convidado-item { margin-top: 0.5rem; }
+
+#copiar-pix {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #2f855a;
+  color: #fff;
+  font-weight: 600;
+}
+#copiar-pix:hover { filter: brightness(0.95); }

@@ -2,10 +2,10 @@
 document.getElementById("rsvp-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  // Coleta todos os nomes digitados
+  // Coleta e normaliza nomes (remove vazios e espaços extras)
   const convidadosInputs = document.querySelectorAll("input[name='convidado[]']");
   const listaNomes = Array.from(convidadosInputs)
-    .map(i => i.value.trim())
+    .map(i => i.value.replace(/\s+/g, " ").trim())
     .filter(v => v.length > 0);
 
   if (listaNomes.length === 0) {
@@ -13,12 +13,18 @@ document.getElementById("rsvp-form").addEventListener("submit", function (e) {
     return;
   }
 
-  const telefone = "27996246736"; // Número com DDD (somente dígitos)
+  // Remove possíveis duplicados (opcional)
+  const nomesUnicos = Array.from(new Set(listaNomes));
+
+  // Telefone de destino do WhatsApp (somente dígitos, com DDD)
+  const telefone = "67991443631";
+
   const texto = `Olá! Estou confirmando presença no casamento de Max & Silva! 🎉
 
-Convidados:
-- ${listaNomes.join("\n- ")}`;
+Convidados (${nomesUnicos.length}):
+- ${nomesUnicos.join("\n- ")}
 
+Prazo para confirmações: até 31/10/2025.`;
 
   const url = `https://wa.me/${telefone}?text=${encodeURIComponent(texto)}`;
   window.open(url, "_blank");
@@ -28,7 +34,6 @@ Convidados:
 function adicionarConvidado() {
   const lista = document.getElementById("convidados-lista");
 
-  // Wrapper do campo (permite evoluir para remover no futuro, se quiser)
   const wrapper = document.createElement("div");
   wrapper.className = "convidado-item";
 
@@ -41,6 +46,24 @@ function adicionarConvidado() {
   wrapper.appendChild(input);
   lista.appendChild(wrapper);
 
-  // Foca automaticamente no novo campo
   input.focus();
 }
+
+/* ===== Copiar chave PIX (se estiver no HTML) ===== */
+(function () {
+  const btn = document.getElementById("copiar-pix");
+  const alvo = document.getElementById("pix-chave");
+  if (!btn || !alvo) return;
+
+  btn.addEventListener("click", async () => {
+    try {
+      const chave = alvo.dataset.pix || alvo.textContent.trim();
+      await navigator.clipboard.writeText(chave);
+      const textoOriginal = btn.textContent;
+      btn.textContent = "Copiado!";
+      setTimeout(() => (btn.textContent = textoOriginal), 1500);
+    } catch (e) {
+      alert("Não foi possível copiar automaticamente. Copie manualmente: " + (alvo.dataset.pix || alvo.textContent.trim()));
+    }
+  });
+})();
