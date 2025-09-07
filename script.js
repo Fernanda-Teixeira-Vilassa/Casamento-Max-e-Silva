@@ -17,7 +17,7 @@ document.getElementById("rsvp-form").addEventListener("submit", function (e) {
   const nomesUnicos = Array.from(new Set(listaNomes));
 
   // Telefone de destino do WhatsApp (somente dígitos, com DDD)
-  const telefone = "67991443631";
+  const telefone = "27996246736";
 
   const texto = `Olá! Estou confirmando presença no casamento de Max & Silva! 🎉
 
