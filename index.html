@@ -10,9 +10,14 @@
 
 <body>
     <header>
-        <h1>Max & Silva</h1>
-        <p>Junte-se a nós para celebrar o amor</p>
-    </header>
+    <h1>Max & Silva</h1>
+    <p>Com fé, esperança e amor, queremos compartilhar este momento especial com vocês.</p>
+    <blockquote>
+        “O amor tudo sofre, tudo crê, tudo espera, tudo suporta.” 
+        <br>
+        <cite>(1 Coríntios 13:7)</cite>
+    </blockquote>
+</header>
 
     <div class="content">
         <h2>Convite de Casamento</h2>
@@ -45,22 +50,34 @@
     <div class="decor decor-top"></div>
     <div class="decor decor-bottom"></div>
 
-    <section class="timeline">
-        <div class="photo-box" onclick="uploadPhoto(this)"><span>Foto 1</span></div>
-        <div class="photo-box" onclick="uploadPhoto(this)"><span>Foto 2</span></div>
-        <div class="photo-box" onclick="uploadPhoto(this)"><span>Foto 3</span></div>
-    </section>
-    <section class="rsvp">
-        <h2>Confirmação de Presença</h2>
-        <p>Confirme sua presença e venha celebrar com a gente esse momento tão especial! 🥰</p>
-      
-        <form id="rsvp-form">
-          <input type="number" id="quantidade" name="quantidade" placeholder="Número de pessoas" min="1" required>
-          <textarea id="mensagem" name="mensagem" placeholder="Nome de todos que que irão comparecer"></textarea>
-          <button type="submit">Confirmar via WhatsApp</button>
-        </form>
-      </section>
-     
+   <section class="timeline">
+    <div class="photo-box">
+        <img src="imagens/foto1.jpg" alt="Foto 1">
+    </div>
+    <div class="photo-box">
+        <img src="imagens/foto2.jpg" alt="Foto 2">
+    </div>
+    <div class="photo-box">
+        <img src="imagens/foto3.jpg" alt="Foto 3">
+    </div>
+</section>
+
+<section class="rsvp">
+  <h2>Confirmação de Presença</h2>
+  <p>Confirme sua presença e venha celebrar com a gente esse momento tão especial! 🥰<br>
+    <strong>Confirmações até 31/10/2025.</strong>
+  </p>
+
+  <form id="rsvp-form">
+    <div id="convidados-lista">
+      <input type="text" name="convidado[]" placeholder="Nome do convidado" required>
+    </div>
+
+    <button type="button" onclick="adicionarConvidado()">+ Adicionar Convidado</button>
+    <button type="submit">Confirmar via WhatsApp</button>
+  </form>
+</section>
+
     <section class="presentes">
         <h2>Presente dos Noivos</h2>
         <p>

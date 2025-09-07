@@ -1,42 +1,46 @@
-// Confirmação de presença via WhatsApp
+// ===== RSVP via WhatsApp =====
 document.getElementById("rsvp-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const quantidade = document.getElementById("quantidade").value;
-  const mensagem = document.getElementById("mensagem").value;
+  // Coleta todos os nomes digitados
+  const convidadosInputs = document.querySelectorAll("input[name='convidado[]']");
+  const listaNomes = Array.from(convidadosInputs)
+    .map(i => i.value.trim())
+    .filter(v => v.length > 0);
 
-  const telefone = "27996246736"; // Número com DDD
-  const texto = `Olá! Estou confirmando presença no casamento de Max & Silva! Estarei presente com ${quantidade} pessoa(s).\n\nNome(s): ${mensagem}`;
+  if (listaNomes.length === 0) {
+    alert("Por favor, informe ao menos um nome de convidado.");
+    return;
+  }
+
+  const telefone = "27996246736"; // Número com DDD (somente dígitos)
+  const texto = `Olá! Estou confirmando presença no casamento de Max & Silva! 🎉
+
+Convidados:
+- ${listaNomes.join("\n- ")}`;
+
 
   const url = `https://wa.me/${telefone}?text=${encodeURIComponent(texto)}`;
   window.open(url, "_blank");
 });
 
-// Upload de fotos na timeline via clique
-function uploadPhoto(element) {
-  const uploader = document.getElementById("photoUploader");
-  uploader.click();
+// ===== Adicionar novo campo de convidado =====
+function adicionarConvidado() {
+  const lista = document.getElementById("convidados-lista");
 
-  uploader.onchange = function () {
-    const file = uploader.files[0];
-    if (file && file.type.startsWith("image/")) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        element.innerHTML = `<img src="${e.target.result}" alt="Foto do casal" />`;
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+  // Wrapper do campo (permite evoluir para remover no futuro, se quiser)
+  const wrapper = document.createElement("div");
+  wrapper.className = "convidado-item";
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.name = "convidado[]";
+  input.placeholder = "Nome do convidado";
+  input.required = true;
+
+  wrapper.appendChild(input);
+  lista.appendChild(wrapper);
+
+  // Foca automaticamente no novo campo
+  input.focus();
 }
-
-// Inicializa as 3 primeiras imagens automaticamente
-window.addEventListener("DOMContentLoaded", () => {
-  const imagens = ["imagens/foto1.jpg", "imagens/foto2.jpg", "imagens/foto3.jpg"];
-  const caixas = document.querySelectorAll(".photo-box");
-
-  imagens.forEach((src, index) => {
-    if (caixas[index]) {
-      caixas[index].innerHTML = `<img src="${src}" alt="Foto ${index + 1}" />`;
-    }
-  });
-});
