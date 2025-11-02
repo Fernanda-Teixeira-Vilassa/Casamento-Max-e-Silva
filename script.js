@@ -24,7 +24,7 @@ document.getElementById("rsvp-form").addEventListener("submit", function (e) {
 Convidados (${nomesUnicos.length}):
 - ${nomesUnicos.join("\n- ")}
 
-Prazo para confirmações: até 31/10/2025.`;
+Prazo para confirmações: até 12/11/2025.`;
 
   const url = `https://wa.me/${telefone}?text=${encodeURIComponent(texto)}`;
   window.open(url, "_blank");
