@@ -1,4 +1,4 @@
-// ===== RSVP via WhatsApp =====
+/* // ===== RSVP via WhatsApp =====
 document.getElementById("rsvp-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -47,7 +47,7 @@ function adicionarConvidado() {
   lista.appendChild(wrapper);
 
   input.focus();
-}
+} */
 
 /* ===== Copiar chave PIX (se estiver no HTML) ===== */
 (function () {
