@@ -1,4 +1,4 @@
-/* // ===== RSVP via WhatsApp =====
+ja/* // ===== RSVP via WhatsApp =====
 document.getElementById("rsvp-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -51,13 +51,19 @@ function adicionarConvidado() {
 
 /* ===== Copiar chave PIX (se estiver no HTML) ===== */
 
-function copiarLocalizacao() {
-  const texto = "Rua Exemplo, 123 - São Paulo - SP";
+function copiarLocalizacaoIgreja() {
+  const texto = "Rua Dr. Cecíliano Abel de Almeida, 22 – Nova Itaparica, Vila Velha – ES";
   navigator.clipboard.writeText(texto)
     .then(() => alert("Endereço copiado!"))
     .catch(() => alert("Erro ao copiar!"));
 }
 
+function copiarLocalizacaoCerimonial() {
+  const texto = "R. dos Laranjais, 500 - Ilha dos Bentos, Vila Velha - ES";
+  navigator.clipboard.writeText(texto)
+    .then(() => alert("Endereço copiado!"))
+    .catch(() => alert("Erro ao copiar!"));
+}
 (function () {
   const btn = document.getElementById("copiar-pix");
   const alvo = document.getElementById("pix-chave");
