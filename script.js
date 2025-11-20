@@ -50,6 +50,14 @@ function adicionarConvidado() {
 } */
 
 /* ===== Copiar chave PIX (se estiver no HTML) ===== */
+
+function copiarLocalizacao() {
+  const texto = "Rua Exemplo, 123 - São Paulo - SP";
+  navigator.clipboard.writeText(texto)
+    .then(() => alert("Endereço copiado!"))
+    .catch(() => alert("Erro ao copiar!"));
+}
+
 (function () {
   const btn = document.getElementById("copiar-pix");
   const alvo = document.getElementById("pix-chave");
